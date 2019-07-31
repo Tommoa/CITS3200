@@ -13,8 +13,10 @@ There are a number of reasons that we believe that our team is a good fit for th
 	 - Both have a web-server front end for program submission.
 
 ## A wechat-based survey tool for Chinese international students [Dr. Yu Tao]
+
 Pros:
  - Our team involves two Chinese international students, which will allow us to have a good grasp of the requirements and problem space.
+
 Cons:
  - Our team is unfamiliar with the process and API for creating Wechat apps
 
@@ -23,18 +25,22 @@ Pros:
  - Some of our team is familiar with the Google Cloud AI service and API, giving us a good understanding of the problem space.
 
 ## UWAHS Campus Walk - with Oral Histories [Dr. Fran Pesich]
+
 Pros:
  - Our team is passionate about the development and history of the university.
  - We are aware of the various APIs that are required to complete the requested application.
+
 Cons:
  - We lack familiarity with the creation of mobile apps.
 
 ## Unigames Game Library Management and Borrowing System [Ms. Taylor Home]
+
 Pros:
  - Our team is familiar with the current system in use at Unigames for this purpose. We believe this will allow us to have a better understanding of the problem space and requirements.
  - Our team is aquainted with the client, which we believe will lead to better communication.
 
 ## Deformation measurement in Python [Dr. Ghulam Mubashar Hassan]
+
 Pros:
  - Our team is familiar with both Python and MATLAB, which should allow for a relatively smooth transition between the two languages.
  - Some members of our team are currently studying mathematics, which may help the team understand the (already covered) mathematical side of the project.
