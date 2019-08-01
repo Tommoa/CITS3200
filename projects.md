@@ -48,10 +48,15 @@ Pros:
 
 ## Network Deployment of Cyberforensic Tools [Dr. Richard Adams]
 
+Pros:
+ - The majority of our team has either done or are currently doing the units "Networks and Security" and/or "Cybersecurity". This will help lead the team to a better understanding of the requirements of the project.
+
 ## Ethological software for fieldwork on Western Australian magpies [Ms. Lizzie Speechley]
-We are passionate and responsible for protecting the ecological environment.
 
 ## Online tool for oral feedback in foreign language learning [Dr. Nicola Fraschini]
+
+Pros:
+ - Our team is familiar with the javascript APIs for recording and saving audio.
 
 ## SAGE Accommodation booking System [Ms. April Harris]
 
