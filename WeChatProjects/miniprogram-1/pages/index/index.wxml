@@ -1,13 +1,29 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> Get User's Info </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">  {{userInfo.nickName}}</text>
-    </block>
+<image class="logo" src='/images/logo.svg'></image>
+
+  <text class="welcome">{{motto}}</text>
+  
+  <view class="weui-cell">
+      <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="Enter Survey ID" />
+      </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
+
+  <view class="page__bd">
+      <view class="weui-tabbar">
+          <view class="weui-tabbar__item weui-bar__item_on">
+              <view style="position: relative;display:inline-block;">
+                <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
+              </view>
+             
+          </view>
+          <view bindtap="bindViewTap" class="weui-tabbar__item">
+              <view style="position: relative;display:inline-block;">
+                <image src="../../images/user.svg" class="weui-tabbar__icon"></image>
+              </view>
+          </view>
+      </view>
+    </view>
 </view>

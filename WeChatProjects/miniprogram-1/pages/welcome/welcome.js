@@ -1,4 +1,5 @@
 // pages/Welcome/welcome.js
+const app = getApp()
 Page({
 
   /**
@@ -19,7 +20,19 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    this.load();
+  },
+  load: function(){
+    var n = 1;
+    var timer = setInterval(() => {
+      if (n == 6) {
+        clearInterval(timer);
+        wx.redirectTo({
+          url: '../index/index'
+        })
+      }
+      n++;
+    }, 400);
   },
 
   /**

@@ -9,3 +9,19 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.weui-tabbar__icon{
+  display:inline-block;
+  align-items: center;
+  width:75rpx;
+  height:75rpx;
+  padding: 20rpx;
+  }
+  .weui-tabbar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height: 150rpx;
+
+}
