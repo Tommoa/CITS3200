@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -7,6 +8,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
+    "navigationStyle": "default",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
