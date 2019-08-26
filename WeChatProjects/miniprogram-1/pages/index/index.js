@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Welcome to UWA Survet Tool',
+    motto: 'Welcome to UWA Survey Tool',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
