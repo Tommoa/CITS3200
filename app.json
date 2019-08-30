@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/welcome/welcome",
-    
     "pages/logs/logs",
     "pages/my/my"
   ],
@@ -13,5 +12,6 @@
     "navigationStyle": "default",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "cloud": true
 }
