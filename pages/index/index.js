@@ -40,7 +40,7 @@ Page({
                 data: {
                   Location: information.city,
                   Gender: information.gender,
-                  Openid: openid
+                  
                 },
                 success: function (res) {
                   // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
