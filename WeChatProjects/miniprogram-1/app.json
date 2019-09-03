@@ -3,7 +3,8 @@
     "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/final/final"
   ],
   "window": {
     "backgroundTextStyle": "light",

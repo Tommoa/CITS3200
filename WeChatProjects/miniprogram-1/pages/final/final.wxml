@@ -1,0 +1,5 @@
+<!--pages/final/final.wxml-->
+<view class='finish'>
+<image src="/images/finish.png"></image>
+ <text>Congratulations</text>
+</view>
