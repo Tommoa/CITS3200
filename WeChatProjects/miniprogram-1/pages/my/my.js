@@ -13,7 +13,7 @@ Page({
   },
   bindViewTap: function () {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../final/final'
     })
   },
   bindViewTapSurvey: function () {
