@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/welcome/welcome",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/survey/survey"
   ],
   "window": {
     "backgroundTextStyle": "light",

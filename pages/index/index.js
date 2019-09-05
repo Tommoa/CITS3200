@@ -5,12 +5,23 @@ const app = getApp()
 Page({
   data: {
     motto: 'Welcome to UWA Survey Tool',
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    surveyid: 'default'
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../my/my'
+    })
+  },
+  getID: function(e){
+    this.setData({
+      surveyid: e.detail.value
+    })
+  },
+  searchSurveyFunc: function(){
+    wx.navigateTo({
+      url: '../survey/survey?id='+this.data.surveyid
     })
   },
   onLoad: function () {
