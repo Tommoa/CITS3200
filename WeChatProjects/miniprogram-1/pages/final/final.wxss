@@ -1,6 +1,6 @@
 /* pages/final/final.wxss */
 .finish{
-  height: 100vh;
+  height: 50vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -8,6 +8,9 @@
   justify-content: space-around;
 }
 image{
-  width:300rpx;
-  border-radius: 50%;
+  width:400rpx;
+
+}
+text{
+  font-size: 75rpx;
 }
