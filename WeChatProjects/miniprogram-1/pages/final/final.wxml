@@ -1,8 +1,14 @@
 <!--pages/final/final.wxml-->
+<view class="container">
 <view class='finish'>
-<image src="/images/finish.png"></image>
+<icon type="success" size="250rpx"></icon>
  <text>Congratulations</text>
 </view>
+
+<view class="page__bd page__bd_spacing">
+<button bindtap="bindViewTapHome" class="weui-btn" type="primary">Return</button>
+</view>
+
 
 <view class="page__bd">
       <view class="weui-tabbar">
@@ -19,3 +25,4 @@
           </view>
       </view>
       </view>
+</view>

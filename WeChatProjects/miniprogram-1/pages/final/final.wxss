@@ -1,4 +1,6 @@
 /* pages/final/final.wxss */
+page{background-color:#EDEDED;}
+
 .finish{
   height: 50vh;
   width: 100vw;
@@ -7,10 +9,13 @@
   align-items: center;
   justify-content: space-around;
 }
+.weui-btn{
+  width: 400rpx;
+}
 image{
   width:400rpx;
 
 }
 text{
-  font-size: 75rpx;
+  font-size: 50rpx;
 }
