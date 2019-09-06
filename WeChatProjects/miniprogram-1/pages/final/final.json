@@ -1,3 +1,6 @@
 {
+  "navigationBarTitleText": "Survey Complete",
+  
+  "navigationBarTextStyle": "black",
   "usingComponents": {}
 }
