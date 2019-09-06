@@ -4,7 +4,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/final/final"
+    "pages/final/final",
+    "pages/my-complete/my-complete",
+    "pages/my-saved/my-saved",
+    "pages/my-setting/my-setting"
   ],
   "window": {
     "backgroundTextStyle": "light",
