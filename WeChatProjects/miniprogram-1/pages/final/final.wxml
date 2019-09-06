@@ -3,3 +3,19 @@
 <image src="/images/finish.png"></image>
  <text>Congratulations</text>
 </view>
+
+<view class="page__bd">
+      <view class="weui-tabbar">
+          <view bindtap="bindViewTapSurvey" class="weui-tabbar__item">
+              <view style="position: relative;display:inline-block;">
+                <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
+              </view>
+             
+          </view>
+          <view class="weui-tabbar__item weui-bar__item_on">
+              <view style="position: relative;display:inline-block;">
+                <image src="../../images/userA.svg" class="weui-tabbar__icon"></image>
+              </view>
+          </view>
+      </view>
+      </view>
