@@ -1,4 +1,4 @@
 <!--pages/survey/survey.wxml-->
-<text>pages/survey/survey.wxml</text>
-<text>{{survey[0].Sname}}</text>
-<text>{{survey[0].Sdescription}}</text>
+<text>pages/survey/survey.wxml \n</text>
+<text>title: {{survey[0].Sname}} \n</text>
+<text>description: {{survey[0].Sdescription}} \n</text>

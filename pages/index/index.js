@@ -6,7 +6,7 @@ Page({
   data: {
     motto: 'Welcome to UWA Survey Tool',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    surveyid: 'default'
+    surveyid: ''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -20,9 +20,11 @@ Page({
     })
   },
   searchSurveyFunc: function(){
-    wx.navigateTo({
-      url: '../survey/survey?id='+this.data.surveyid
-    })
+    if(this.data.surveyid != ''){
+      wx.navigateTo({
+        url: '../survey/survey?id=' + this.data.surveyid
+      })
+    }
   },
   onLoad: function () {
     var openid

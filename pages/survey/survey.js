@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
   },
 
   /**
@@ -19,11 +18,15 @@ Page({
         surveyID: options.id
       }).get({
       success: res => {
-        // res.data 包含该记录的数据
-        console.log(res.data)
+        //console.log(res.data)
         this.setData({
           survey: res.data
         })
+        if(res.data.length == 0){
+          wx.navigateTo({
+            url: '../index/index'
+          })
+        }
       }
     })
     //console.log('id is '+ options.id)
@@ -33,14 +36,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
