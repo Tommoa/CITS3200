@@ -19,14 +19,13 @@
   color: #FFFFFF;
   align-content: center;
   align-items: center;
-  font-size: 48rpx;
+  font-size: 45rpx;
   top:60vh;
   width: 600rpx;
   left: 75rpx;
   text-align: center;
   font-weight: lighter;
   position: relative;
-
 }
 
 .weui-tabbar{
