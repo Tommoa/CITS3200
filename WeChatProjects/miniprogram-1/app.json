@@ -7,7 +7,8 @@
     "pages/final/final",
     "pages/my-complete/my-complete",
     "pages/my-saved/my-saved",
-    "pages/my-setting/my-setting"
+    "pages/my-setting/my-setting",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",
