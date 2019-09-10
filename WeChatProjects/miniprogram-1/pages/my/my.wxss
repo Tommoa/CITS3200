@@ -1,4 +1,9 @@
 /* pages/my/my.wxss */
+.container {
+  /* height:550rpx; */
+  background-color: #FFFFFF;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -9,9 +14,23 @@
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
-  /* border-radius: 50%; */
 }
 
 .userinfo-nickname {
   color: #aaa;
+}
+
+.weui-cell__bd {
+  margin-top: 6px;
+  /* font-size: 15px; */
+  align-items: middle;
+}
+.page__bd {
+    padding: 0px;
+}
+
+.page {
+  position:fixed;
+  height: 100vh;
+  width: 100vw;
 }
