@@ -13,16 +13,16 @@
 .weui-tabbar__icon{
   display:inline-block;
   align-items: center;
-  width:75rpx;
-  height:75rpx;
-  padding: 20rpx;
+  width:38px;
+  height:38px;
+  padding: 10px;
   }
   .weui-tabbar{
   position:fixed;
   bottom:0;
   left:0;
   right:0;
-  height: 150rpx;
+  height: 75px;
 
 }
 
