@@ -38,6 +38,7 @@
   opacity: 0.5;
   border-radius: 6px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 .weui-input {
   text-align: center;

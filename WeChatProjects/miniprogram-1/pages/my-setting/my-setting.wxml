@@ -1,2 +1,12 @@
-<!--pages/my-setting/my-setting.wxml-->
-<text>pages/my-setting/my-setting.wxml</text>
+<!--pages/setting/setting.wxml-->
+<view class="page">
+  <view class="container">
+    <text class="page__title">About</text>
+    <text class="page__desc">Contact Us
+      Email:22222222@uwa.edu.au
+    </text>
+
+  </view>
+
+</view>
+

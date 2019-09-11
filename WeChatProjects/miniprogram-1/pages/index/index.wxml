@@ -8,7 +8,8 @@
     <text>{{motto}}</text>
       <view class="weui-cell">
         <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="Please Enter Survey ID" />
+            <input class="weui-input" type="number" maxlength="10"
+              placeholder="Please Enter Survey ID" />
         </view>
       </view>
   </view>
