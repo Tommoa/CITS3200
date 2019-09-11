@@ -4,7 +4,8 @@
     "pages/welcome/welcome",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/survey/survey"
+    "pages/survey/survey",
+    "pages/question/question"
   ],
   "window": {
     "backgroundTextStyle": "light",

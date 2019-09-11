@@ -2,3 +2,4 @@
 <text>pages/survey/survey.wxml \n</text>
 <text>title: {{survey[0].Sname}} \n</text>
 <text>description: {{survey[0].Sdescription}} \n</text>
+<button bindtap="goQuestion">start</button>
