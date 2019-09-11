@@ -11,7 +11,7 @@ Page({
   },
   bindViewTap: function () {
     wx.navigateTo({
-      url: '../final/final'
+      url: '../s-final/final'
     })
   },
   bindViewTapSurvey: function () {

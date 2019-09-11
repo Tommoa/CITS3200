@@ -5,9 +5,12 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/final/final",
+    "pages/s-final/final",
     "pages/my-complete/my-complete",
-    "pages/my-saved/my-saved"
+    "pages/my-saved/my-saved",
+    "pages/s-history/s-history",
+    "pages/s-intro/s-intro",
+    "pages/s-question/s-question"
   ],
   "window": {
     "backgroundTextStyle": "light",
