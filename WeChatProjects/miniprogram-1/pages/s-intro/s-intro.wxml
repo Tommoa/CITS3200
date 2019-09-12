@@ -2,7 +2,7 @@
 <!--<text>{{surveyID}}</text>
 <text>{{app.globalData.currentSurveyID}}</text>-->
  <view class="introduction">Survey introduction</view>
- <view class="page">
+ <view class="button">
         <button class="weui-btn" type="primary">Start</button>
 </view>
 <view class="title">This is an example for surey title</view>

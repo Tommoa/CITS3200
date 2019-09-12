@@ -1,12 +1,5 @@
 /* pages/s-intro/s-intro.wxss */
-.page {
-  font-size: 45rpx;
-  top:73vh;
-  width: 600rpx;
-  left: 75rpx;
-  position: relative;
-}
-.page {
+.button {
   font-size: 45rpx;
   top:73vh;
   width: 600rpx;
@@ -18,8 +11,8 @@
   top:3vh;
   width: 500px;
   left: 75rpx;
-  position: relative;
   color: grey;
+  padding: 10rpx 50rpx;
 }
 .title {
   font-size: 30px;
