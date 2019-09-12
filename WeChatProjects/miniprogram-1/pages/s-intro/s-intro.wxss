@@ -1,1 +1,34 @@
 /* pages/s-intro/s-intro.wxss */
+.page {
+  font-size: 45rpx;
+  top:73vh;
+  width: 600rpx;
+  left: 75rpx;
+  position: relative;
+}
+.page {
+  font-size: 45rpx;
+  top:73vh;
+  width: 600rpx;
+  left: 75rpx;
+  position: relative;
+}
+.introduction {
+  font-size: 30px;
+  top:3vh;
+  width: 500px;
+  left: 75rpx;
+  position: relative;
+  color: grey;
+}
+.title {
+  font-size: 30px;
+  line-height:1em; 
+  width: 250px;
+  padding: 20rpx 50rpx;
+  background: white;
+}
+.desc {
+  color:grey;
+  padding: 0rpx 50rpx;
+}

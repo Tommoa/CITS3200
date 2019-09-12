@@ -1,4 +1,9 @@
 <!--pages/s-intro/s-intro.wxml-->
-<text>{{surveyID}}</text>
-<text>{{app.globalData.currentSurveyID}}</text>
-
+<!--<text>{{surveyID}}</text>
+<text>{{app.globalData.currentSurveyID}}</text>-->
+ <view class="introduction">Survey introduction</view>
+ <view class="page">
+        <button class="weui-btn" type="primary">Start</button>
+</view>
+<view class="title">This is an example for surey title</view>
+ <view class="desc">This is an example for surey and will be replaced after work on this page finished</view>
