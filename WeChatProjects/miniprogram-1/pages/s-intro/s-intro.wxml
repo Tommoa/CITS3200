@@ -1,2 +1,4 @@
 <!--pages/s-intro/s-intro.wxml-->
-<text>pages/s-intro/s-intro.wxml</text>
+<text>{{surveyID}}</text>
+<text>{{app.globalData.currentSurveyID}}</text>
+

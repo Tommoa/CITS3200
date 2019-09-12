@@ -52,6 +52,7 @@ App({
 
   globalData: {
     userInfo: null,
-    isIPX: false
+    isIPX: false,
+    currentSurveyID: null
   }
 })

@@ -1,17 +1,22 @@
 // pages/s-intro/s-intro.js
+const app = getApp()
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    surveyID: null
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({
+      surveyID: options.surveyID
+    })  
 
   },
 

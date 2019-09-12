@@ -9,7 +9,7 @@
       <view class="weui-cell">
         <view class="weui-cell__bd">
             <input class="weui-input" type="number" maxlength="10"
-              placeholder="Please Enter Survey ID" />
+              bindinput="inputID" placeholder="Please Enter Survey ID" />
         </view>
       </view>
   </view>
