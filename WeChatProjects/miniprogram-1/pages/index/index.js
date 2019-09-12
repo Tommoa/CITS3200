@@ -5,7 +5,8 @@ const app = getApp()
 Page({
   data: {
     motto: 'Welcome to UWA Survey Tool',
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isIPX: app.globalData.isIPX
   },
   //事件处理函数
   bindViewTap: function() {

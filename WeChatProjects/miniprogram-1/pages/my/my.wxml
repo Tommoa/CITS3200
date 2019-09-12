@@ -47,7 +47,7 @@
   </view>
 
   <view>
-      <view class="weui-tabbar">
+      <view class="{{isIPX ? 'weui-tabbar-IPX' : 'weui-tabbar'}}" >
           <view bindtap="bindViewTapSurvey" class="weui-tabbar__item">
               <view style="position: relative;display:inline-block;">
                 <image src="../../images/survey.svg" class="weui-tabbar__icon"></image>

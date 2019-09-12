@@ -7,7 +7,8 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isIPX: app.globalData.isIPX
   },
   bindViewTap: function () {
     wx.navigateTo({

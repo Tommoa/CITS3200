@@ -17,13 +17,23 @@
   height:38px;
   padding: 10px;
   }
-  .weui-tabbar{
+  
+.weui-tabbar{
   position:fixed;
   bottom:0;
   left:0;
   right:0;
   height: 75px;
 
+}
+
+.weui-tabbar-IPX {
+  display:-webkit-box;display:-webkit-flex;display:flex;z-index:500;background-color:#f7f7f7;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height: 90px; 
 }
 
 page{

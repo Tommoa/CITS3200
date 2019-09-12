@@ -1,6 +1,9 @@
 //app.js
 App({
   onLaunch: function () {
+
+    this.checkIsIPhoneX()
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -33,7 +36,22 @@ App({
       }
     })
   },
+  checkIsIPhoneX: function () {
+    const self = this
+    wx.getSystemInfo({
+      success: function (res) {
+        // if (res.model.search('iPhone X') != -1) {
+        //   self.globalData.isIPX = true
+        // }
+        if (res.screenHeight / res.screenWidth > 1.78) {
+          self.globalData.isIPX = true
+        }
+      }
+    })
+  },
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    isIPX: false
   }
 })
