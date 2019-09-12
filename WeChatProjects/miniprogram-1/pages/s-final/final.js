@@ -1,11 +1,13 @@
 // pages/final/final.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    isIPX: app.globalData.isIPX
   },
 
   bindViewTap: function () {

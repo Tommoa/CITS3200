@@ -11,7 +11,7 @@
 
 
 <view class="page__bd">
-      <view class="weui-tabbar">
+      <view class="{{isIPX ? 'weui-tabbar-IPX' : 'weui-tabbar'}}">
           <view class="weui-tabbar__item">
               <view style="position: relative;display:inline-block;">
                 <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
