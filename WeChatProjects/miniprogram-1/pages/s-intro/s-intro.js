@@ -27,11 +27,11 @@ Page({
             survey: res.data,
             surveyID: options.surveyID
           })
-          if (res.data.length == 0) {
-            wx.navigateTo({
-              url: '../index/index'
-            })
-          }
+          // if (res.data.length == 0) {
+          //   wx.navigateTo({
+          //     url: '../index/index'
+          //   })
+          // }
         }
       })
     //console.log('id is '+ options.surveyID)

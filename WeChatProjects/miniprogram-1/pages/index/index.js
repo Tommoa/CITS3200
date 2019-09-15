@@ -17,14 +17,19 @@ Page({
     this.setData({
       surveyid: e.detail.value
     })
-  },
-  searchSurveyFunc: function () {
-    if (this.data.surveyid != '') {
+    if (e.detail.value.length == 8) {
       wx.navigateTo({
         url: '../s-intro/s-intro?surveyID=' + this.data.surveyid
       })
     }
   },
+  // searchSurveyFunc: function () {
+  //   if (this.data.surveyid != '') {
+  //     wx.navigateTo({
+  //       url: '../s-intro/s-intro?surveyID=' + this.data.surveyid
+  //     })
+  //   }
+  // },
   onLoad: function () {
     
   }
