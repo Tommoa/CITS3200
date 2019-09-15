@@ -13,17 +13,17 @@ Page({
       url: '../my/my'
     })
   },
-  inputID: function(e) {
+  getID: function (e) {
     this.setData({
-      surveyID: e.detail.value
+      surveyid: e.detail.value
     })
-    if (e.detail.value.length ==8) {
-      // app.globalData.currentSurveyID = e.detail.value 
+  },
+  searchSurveyFunc: function () {
+    if (this.data.surveyid != '') {
       wx.navigateTo({
-        url: '../s-intro/s-intro?surveyID=' + e.detail.value,
+        url: '../s-intro/s-intro?surveyID=' + this.data.surveyid
       })
     }
-    
   },
   onLoad: function () {
     

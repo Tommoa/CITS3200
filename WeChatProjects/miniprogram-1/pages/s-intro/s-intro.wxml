@@ -5,5 +5,5 @@
  <view class="button">
         <button class="weui-btn" type="primary">Start</button>
 </view>
-<view class="title">This is an example for surey title</view>
- <view class="desc">This is an example for surey and will be replaced after work on this page finished</view>
+<view class="title">{{survey[0].Sname}}</view>
+ <view class="desc">{{survey[0].Sdescription}}</view>

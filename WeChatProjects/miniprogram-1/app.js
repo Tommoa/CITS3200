@@ -4,6 +4,15 @@ App({
 
     this.checkIsIPhoneX()
 
+      if(!wx.cloud){
+      console.error("cloud is wrong")
+    } else{
+      wx.cloud.init({
+        traceUser: true,
+        env: "cits3200-jtijd"
+      })
+    }
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
