@@ -1,15 +1,13 @@
 <!--pages/s-intro/s-intro.wxml-->
-<!-- 
-<view class="title">{{survey[0].Sname}}</view>
- <view class="desc">{{survey[0].Sdescription}}</view> -->
 
 <view class="page">
   <view class="page_hd">
-    <view class="{{isIPX ? 'title-IPX' : 'title'}}">{{survey[0].Sname}}A Sample Survey Title</view>
+    <view class="{{isIPX ? 'title-IPX' : 'title'}}">{{survey[0].Sname}}   A Sample Survey Title</view>
   </view>
   <view class="page_bd">
+  
     <view class="desc">{{survey[0].Sdescription}}
-    This is an example for surey and will be replaced after work on this page finished.
+   This is an example for surey and will be replaced after work on this page finished.
     And both of these paragrah are sample description of doing survey which will be loaded after reading the survey files from ther database.</view>
     <button bindtap="startTap" class="weui-btn" type="primary">Start</button>
   </view>
