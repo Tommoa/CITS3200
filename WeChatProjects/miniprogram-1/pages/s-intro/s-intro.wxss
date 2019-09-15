@@ -1,10 +1,13 @@
 /* pages/s-intro/s-intro.wxss */
-.button {
-  font-size: 45rpx;
-  top:73vh;
-  width: 600rpx;
-  left: 75rpx;
-  position: relative;
+.page_hd {
+  background-color: #FFFFFF;  
+}
+.weui-btn {
+  font-size: 20px;
+  bottom: 100px;
+  width: 650rpx;
+  left: 50rpx;
+  position: fixed;
 }
 .introduction {
   font-size: 30px;
@@ -17,11 +20,20 @@
 .title {
   font-size: 30px;
   line-height:1em; 
-  width: 250px;
-  padding: 20rpx 50rpx;
-  background: white;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  padding-left: 50rpx;
+  /* padding: 50rpx; */
+}
+.title-IPX {
+  font-size: 30px;
+  line-height:1em; 
+  padding-top: 120px;
+  padding-bottom: 80px;
+  padding-left: 50rpx;
 }
 .desc {
-  color:grey;
-  padding: 0rpx 50rpx;
+  font-size: 14px;
+  color: #888888;
+  padding: 20px 50rpx;
 }

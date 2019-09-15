@@ -8,7 +8,8 @@ Page({
    * Page initial data
    */
   data: {
-    surveyID: ''
+    surveyID: null,
+    isIPX: app.globalData.isIPX
   },
 
   /**
@@ -37,6 +38,16 @@ Page({
 
   },
 
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../my/my'
+    })
+  },
+  startTap: function () {
+    wx.navigateTo({
+      url: '../s-question/s-question',
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
