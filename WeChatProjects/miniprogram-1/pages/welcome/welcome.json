@@ -3,6 +3,7 @@
   "navigationStyle": "custom",
   "enablePullDownRefresh": false,
   "disableScroll": true,
+  "navigationBarTextStyle": "white",
   
   "usingComponents": {}
   
