@@ -1,0 +1,44 @@
+/* pages/my/my.wxss */
+.container {
+  /* height:550rpx; */
+  background-color: #FFFFFF;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.container-IPX {
+  /* height:550rpx; */
+  background-color: #FFFFFF;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.weui-cell__bd {
+  margin-top: 6px;
+  /* font-size: 15px; */
+  align-items: middle;
+}
+.page__bd {
+    padding: 0px;
+}
+
+.page {
+  position:fixed;
+  height: 100vh;
+  width: 100vw;
+}

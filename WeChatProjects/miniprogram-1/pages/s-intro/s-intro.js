@@ -1,38 +1,58 @@
-// pages/Welcome/welcome.js
+// pages/s-intro/s-intro.js
 const app = getApp()
+
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    surveyID: null,
+    isIPX: app.globalData.isIPX
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    const db = wx.cloud.database()
+    db.collection('survey')
+      .where({
+        surveyID: options.surveyID
+      }).get({
+        success: res => {
+          //console.log(res.data)
+          this.setData({
+            survey: res.data,
+            surveyID: options.surveyID
+          })
+          // if (res.data.length == 0) {
+          //   wx.navigateTo({
+          //     url: '../index/index'
+          //   })
+          // }
+        }
+      })
+    //console.log('id is '+ options.surveyID)
 
   },
 
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../my/my'
+    })
+  },
+  startTap: function () {
+    wx.navigateTo({
+      url: '../s-question/s-question',
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    this.load();
-  },
-  load: function(){
-    var n = 1;
-    var timer = setInterval(() => {
-      if (n == 6) {
-        clearInterval(timer);
-        wx.redirectTo({
-          url: '../index/index'
-        })
-      }
-      n++;
-    }, 400);
+
   },
 
   /**

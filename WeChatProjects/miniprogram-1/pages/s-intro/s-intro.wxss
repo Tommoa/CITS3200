@@ -1,0 +1,39 @@
+/* pages/s-intro/s-intro.wxss */
+.page_hd {
+  background-color: #FFFFFF;  
+}
+.weui-btn {
+  font-size: 20px;
+  bottom: 100px;
+  width: 650rpx;
+  left: 50rpx;
+  position: fixed;
+}
+.introduction {
+  font-size: 30px;
+  top:3vh;
+  width: 500px;
+  left: 75rpx;
+  color: grey;
+  padding: 10rpx 50rpx;
+}
+.title {
+  font-size: 30px;
+  line-height:1em; 
+  padding-top: 100px;
+  padding-bottom: 80px;
+  padding-left: 50rpx;
+  /* padding: 50rpx; */
+}
+.title-IPX {
+  font-size: 30px;
+  line-height:1em; 
+  padding-top: 120px;
+  padding-bottom: 80px;
+  padding-left: 50rpx;
+}
+.desc {
+  font-size: 14px;
+  color: #888888;
+  padding: 20px 50rpx;
+}

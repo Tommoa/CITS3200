@@ -1,9 +1,16 @@
 {
   "pages": [
     "pages/welcome/welcome",
+    "pages/my-setting/my-setting",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/end/end"
+    "pages/my/my",
+    "pages/s-final/final",
+    "pages/my-complete/my-complete",
+    "pages/my-saved/my-saved",
+    "pages/s-history/s-history",
+    "pages/s-intro/s-intro",
+    "pages/s-question/s-question"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,5 +19,6 @@
     "navigationStyle": "default",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "cloud": true
 }

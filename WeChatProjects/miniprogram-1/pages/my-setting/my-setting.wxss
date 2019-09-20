@@ -1,0 +1,14 @@
+/* pages/setting/setting.wxss */
+.container {
+  display: flex;
+  align-items: flex-start;
+  
+  /* justify-content: flex-start; */
+}
+.page__desc {
+  margin-left: 10px;
+}
+
+.page__title {
+  margin-left: 10px;
+}

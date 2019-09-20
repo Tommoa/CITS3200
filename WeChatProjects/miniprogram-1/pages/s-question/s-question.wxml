@@ -1,0 +1,57 @@
+<!--pages/s-question/s-question.wxml-->
+<view class="page">
+  <view class="page_hd">
+    <view class="{{isIPX ? 'title-IPX' : 'title'}}">Question 1</view>
+    <view class="question">The Sample Question Title</view>
+  </view>
+  <view class="page_bd">
+    <view class="weui-cells__title">Multiple Choice</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- <view class="weui-cells__title">Multiple Choices</view>
+    <view class="weui-cells weui-cells_checkbox weui-cells_after-title">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+          <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+
+          <view class="weui-cell__hd weui-check__hd_in-checkbox">
+            <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+            <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+          </view>
+          <view class="weui-cell__bd">{{item.name}}</view>
+        </label>
+      </checkbox-group>
+
+    </view> -->
+
+
+    <button bindtap="nextTap" class="weui-btn" type="primary">Next</button>
+    <button bindtap="viewTap" class="weui-btn2" type="default">View</button>
+  </view>
+
+
+  <view class="{{isIPX ? 'weui-tabbar-IPX' : 'weui-tabbar'}}">
+    <view class="weui-tabbar__item weui-bar__item_on">
+      <view style="position: relative;display:inline-block;">
+        <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
+      </view>
+    </view>
+
+    <view bindtap="bindViewTap" class="weui-tabbar__item">
+      <view style="position: relative;display:inline-block;">
+        <image src="../../images/user.svg" class="weui-tabbar__icon"></image>
+      </view>
+    </view>
+  </view>
+</view>
