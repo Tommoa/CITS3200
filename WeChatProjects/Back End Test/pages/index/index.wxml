@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+<image class="logo" src='/images/logo.svg'></image>
+
+  <text class="welcome">{{motto}}</text>
+  
+  <view class="weui-cell">
+      <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="Enter Survey ID" bindinput="getID" bindblur="searchSurveyFunc"/>
+      </view>
+  </view>
+
+
+  <view class="page__bd">
+      <view class="weui-tabbar">
+          <view class="weui-tabbar__item weui-bar__item_on">
+              <view style="position: relative;display:inline-block;">
+                <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
+              </view>
+             
+          </view>
+          <view bindtap="bindViewTap" class="weui-tabbar__item">
+              <view style="position: relative;display:inline-block;">
+                <image src="../../images/user.svg" class="weui-tabbar__icon"></image>
+              </view>
+          </view>
+      </view>
+    </view>
+</view>
