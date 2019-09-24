@@ -10,7 +10,9 @@
     "pages/my-saved/my-saved",
     "pages/s-history/s-history",
     "pages/s-intro/s-intro",
-    "pages/s-question/s-question"
+    "pages/s-question/s-question",
+    "pages/view/view"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

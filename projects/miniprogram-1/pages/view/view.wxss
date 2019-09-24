@@ -1,0 +1,14 @@
+/* pages/view/view.wxss */
+.page_hd {
+  background-color: #FFFFFF;  
+  font-size: 33px;
+  padding: 0px 30px;
+}
+.question {
+  color:grey;
+  font-size: 26px;
+  padding: 0px 30px;
+}
+.survey questions {
+  background: white;
+}
