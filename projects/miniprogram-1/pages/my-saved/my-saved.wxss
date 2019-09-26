@@ -1,1 +1,4 @@
 /* pages/my-saved/my-saved.wxss */
+.page_bd {
+  margin-top: 10px;
+}

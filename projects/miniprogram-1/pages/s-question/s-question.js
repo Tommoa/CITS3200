@@ -60,7 +60,7 @@ Page({
     })
   },
   viewTap: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../s-history/s-history'
     })
   },

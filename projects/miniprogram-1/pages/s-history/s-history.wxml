@@ -1,2 +1,42 @@
 <!--pages/s-history/s-history.wxml-->
-<text>pages/s-history/s-history.wxml</text>
+<view class="page">
+  <view class="page_hd">
+    <view class="{{isIPX ? 'title-IPX' : 'title'}}">{{survey[0].Sname}} A Sample Survey Title</view>
+  </view>
+
+  <view class="page_bd">
+    <view class="weui-cells__title">Questions</view>
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">What's your favourite food</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">single choice</view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">What's your hobby</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">mutiple choices</view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">What's your major</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">mutiple choices</view>
+      </navigator>
+    </view>
+    <view class="page__bd page__bd_spacing">
+      <button bindtap="bindViewTapBack" class="weui-btn" type="primary">Continue</button>
+    </view>
+  </view>
+
+  <view class="{{isIPX ? 'weui-tabbar-IPX' : 'weui-tabbar'}}" >
+    <view class="weui-tabbar__item weui-bar__item_on">
+        <view style="position: relative;display:inline-block;">
+          <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
+        </view>
+    </view>
+
+    <view bindtap="bindViewTap" class="weui-tabbar__item">
+        <view style="position: relative;display:inline-block;">
+          <image src="../../images/user.svg" class="weui-tabbar__icon"></image>
+        </view>
+    </view>
+  </view>
+
+</view>

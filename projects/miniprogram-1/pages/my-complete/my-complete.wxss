@@ -1,1 +1,4 @@
 /* pages/my-complete/my-complete.wxss */
+.page_bd {
+  margin-top: 10px;
+}

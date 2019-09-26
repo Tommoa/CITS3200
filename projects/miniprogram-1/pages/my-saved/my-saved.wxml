@@ -1,12 +1,18 @@
 <!--pages/my-saved/my-saved.wxml-->
-<view class="weui-cells weui-cells_after-title">
-            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">Survey title (Survey ID)</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access">due time?</view>
-            </navigator>
-            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">Survey title (Survey ID)</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access">last access?</view>
-            </navigator>
-        </view>
+<view class="page">
 
+  <view class="page_bd">
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">Survey title (Survey ID)</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">due time?</view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">Survey title (Survey ID)</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">last access?</view>
+      </navigator>
+    </view>
+
+  </view>
+
+</view>
