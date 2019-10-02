@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/my/my",
     "pages/survey/survey",
-    "pages/question/question"
+    "pages/question/question",
+    "pages/question_list/question_list"
   ],
   "window": {
     "backgroundTextStyle": "light",
