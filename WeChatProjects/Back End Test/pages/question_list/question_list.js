@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    questionList:[]
 
   },
 
@@ -14,13 +15,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
+    // console.log(options.id)
     db.collection('question')
       .where({
         department: options.id
       }).get({
         success: res => {
-          console.log(res.data)
+          this.setData({
+            questionList:res.data
+          })
+          //console.log(res.data)
         }
       })
   },

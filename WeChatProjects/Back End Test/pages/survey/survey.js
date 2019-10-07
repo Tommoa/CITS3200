@@ -82,7 +82,7 @@ Page({
   },
   goQuestion: function(){
     wx.navigateTo({
-      url: '../question/question?id=' + this.data.surveyID
+      url: '../question/question?id=' + this.data.surveyID + '&questionNumber=' + 0
     })
   }
 })
