@@ -77,4 +77,11 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  goQuestion(event){
+    //console.log(event.currentTarget.dataset.num)
+    wx.navigateTo({
+      url: '../question/question?id=' + this.options.id + '&questionNumber=' + event.currentTarget.dataset.num
+    })
+  }
 })

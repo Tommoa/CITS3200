@@ -1,6 +1,6 @@
 <!--pages/question_list/question_list.wxml-->
 <text>pages/question_list/question_list.wxml \n</text>
 <view wx:for="{{questionList}}">
- <text>question: {{questionList[index].title}}</text>
+ <text bindtap="goQuestion" data-num="{{index}}" >question: {{questionList[index].title}}</text>
 </view>
 

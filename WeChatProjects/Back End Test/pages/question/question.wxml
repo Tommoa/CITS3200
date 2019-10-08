@@ -1,5 +1,6 @@
 <!--pages/question/question.wxml-->
 <text>pages/question/question.wxml \n</text>
  <text>question: {{questionList[questionNumber].title}}</text>
+
  <button bindtap="goNextQuestion">next question</button>
 <button bindtap="goQuestionList">question list</button>
