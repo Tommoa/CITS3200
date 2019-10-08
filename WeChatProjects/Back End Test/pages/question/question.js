@@ -24,9 +24,10 @@ Page({
         success: res => {
           this.setData({
             questionList: res.data,
+            allQuesion: res.data.length - 1,
             questionNumber: options.questionNumber,
           })
-          console.log(res.data)
+          console.log(this.data.allQuesion)
         }
       }),
       this.setData({
