@@ -23,35 +23,32 @@ body
 </style>
 <body>
 
-<div>
-
 <h1>Manage Questionaire.</h1>
-<form id = "settings_form">
-	How many questions: <input type = "number" id = "questions" value = 1 min = 1 max = 100> <br>
-	How many groups: <input type = "number" id = "groups" value = 3 min = 1 max = 100> <br>
-	Group ratio: <input type = "text" id = "ratio" value = "1:1:1"> <br>
-</form>
-<button onclick = "change_settings()">change settings</button>
-</div>
+<form id = "form" action = "send.php" method = "post">
+	Questionaire name: <input name = "p_questionaire_name" type = "text"> <br>
+	How many questions: <input name = "p_question_num" type = "number" id = "questions" value = 1 min = 1 max = 100> <br>
+	How many groups: <input name = "p_group_num" type = "number" id = "groups" value = 3 min = 1 max = 100> <br>
+	Group ratio: <input name = "p_ratio" type = "text" id = "ratio" value = "1:1:1"> <br>
+	<button type = "button" onclick = "change_settings()">change settings</button>
 
-<form id = "question_list_data">
-<div id = "question_list">
+	<div id = "question_list">
 	<h2>Questions</h2>
 
-</div>
+	</div>	
+
+	<br><br>
+	<input type="Submit" value = "Submit Questionaire">
+	
 </form>
 
-<br><br>
-<button>Submit questionairre (most likely through POST method lator)</button>
-		
 </body>
 </html>
 
 <script>
 	// might as well make these global so we aren't call the DOM stuff every function call
 	var div = document.getElementById("question_list"); 
-	var form = document.getElementById("settings_form");
-	
+	var form = document.getElementById("form");
+
 	// global variables
 	// initially we set them to 0 so that we can call change_settings and generate 
 	// the first question automatically.
@@ -109,6 +106,7 @@ body
 				
 				// textarea to enter the research question itself.
 				var question_actual = document.createElement("textarea");
+				question_actual.setAttribute("name","p_question_actual"+i)
 				question_actual.setAttribute("rows","5");
 				question_actual.setAttribute("cols","50");
 				question_actual.innerHTML = "Enter question here.";
@@ -128,8 +126,8 @@ body
 					
 					var input = document.createElement("input");
 					input.setAttribute("type","radio");
-					input.setAttribute("name","answer_type" + i);
-					//input.setAttribute("value",answer_types[j]);
+					input.setAttribute("name","p_answer_type" + i);
+					input.setAttribute("value",j);
 					input.setAttribute("onchange","change_answer_type(" + i + "," + j + ")");
 					
 					if (j == 0) // if its the first index (short answer) we set as default
@@ -182,6 +180,8 @@ body
 				{
 					var checkbox = document.createElement("input");
 					checkbox.setAttribute("type","checkbox");
+					checkbox.setAttribute("name","p_group" + i + "[]");
+					checkbox.setAttribute("value",j);
 					checkbox.setAttribute("checked",true);
 					
 					var checkbox_text = document.createTextNode("Group " + j + " ");
@@ -219,6 +219,7 @@ body
 		{
 			var text = document.createTextNode("character limit (leave 0 if no limit):");
 			var char_limit = document.createElement("input");
+			char_limit.setAttribute("name","p_char_limit" + question);
 			char_limit.setAttribute("type","number");
 			char_limit.setAttribute("value",0);
 			char_limit.setAttribute("min",0);
@@ -230,6 +231,7 @@ body
 		{
 			var text = document.createTextNode("Number of choices ");
 			var number_choices = document.createElement("input");
+			number_choices.setAttribute("name","p_number_choices" + question);
 			number_choices.setAttribute("type","number");
 			number_choices.setAttribute("value",2);
 			number_choices.setAttribute("min",2); // minimum 2 otherwise what is the point
@@ -268,6 +270,7 @@ body
 				
 				var input = document.createElement("input");
 				input.setAttribute("type","text");
+				input.setAttribute("name","p_choice_description" + question + "[]");
 				var br = document.createElement("br");
 				
 				question_choices.appendChild(input_text);
