@@ -1,17 +1,24 @@
 <!--pages/question/question.wxml-->
 <text>pages/question/question.wxml \n</text>
  <text>question: {{questionList[questionNumber].title}}</text>
-<view wx:if="{{questionList[questionNumber].type == 'shortAns'}}">
-<input class="weui-input" maxlength="10" placeholder="max to 10 characters" />
-</view>
-<view wx:if="{{questionList[questionNumber].type == 'multi'}}">
-  <view wx:for="{{questionList[questionNumber].suggestions}}">
-    <label><radio />{{questionList[questionNumber].suggestions[index]}}</label>
+
+<view class="question_body">
+
+  <view wx:if="{{questionList[questionNumber].type == 'shortAns'}}">
+    <input class="weui-input" maxlength="10" placeholder="max to 10 characters" />
   </view>
+
+  <view wx:if="{{questionList[questionNumber].type == 'multi'}}">
+    <view wx:for="{{questionList[questionNumber].suggestions}}">
+      <label><radio>{{questionList[questionNumber].suggestions[index]}}</radio></label>
+    </view>
+  </view>
+
 </view>
 
+
 <view wx:if="{{questionNumber == allQuesion}}">
-  <button >submit</button>
+  <button bindtap="submitAnswer" >submit</button>
 </view>
 <view wx:if="{{questionNumber != allQuesion}}">
   <button bindtap="goNextQuestion">next question</button>

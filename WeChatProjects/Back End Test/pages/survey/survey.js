@@ -1,3 +1,4 @@
+const app = getApp()
 const db = wx.cloud.database()
 
 // pages/survey/survey.js
@@ -14,6 +15,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.answer)
+    app.globalData.answer = []
+    console.log(app.globalData.answer)
     db.collection('survey')
       .where({
         surveyID: options.id
