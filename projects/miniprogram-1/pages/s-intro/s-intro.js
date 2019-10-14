@@ -27,11 +27,10 @@ Page({
             survey: res.data,
             surveyID: options.surveyID
           })
-          // if (res.data.length == 0) {
-          //   wx.navigateTo({
-          //     url: '../index/index'
-          //   })
-          // }
+          if (res.data.length == 0) {
+            // NEED TO SHOW ERROR
+          
+          }
         }
       })
     //console.log('id is '+ options.surveyID)
@@ -45,7 +44,7 @@ Page({
   },
   startTap: function () {
     wx.navigateTo({
-      url: '../s-question/s-question',
+      url: '../s-question/s-question?questionNumber=' + 0,
     })
   },
   /**

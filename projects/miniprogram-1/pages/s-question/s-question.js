@@ -1,5 +1,6 @@
 // pages/s-question/s-question.js
 const app = getApp()
+const db = wx.cloud.database()
 
 Page({
 
@@ -7,6 +8,9 @@ Page({
    * Page initial data
    */
   data: {
+    questionNumber: 0,
+    questionList: [],
+    nextQuestion: 0,
     radioItems: [
       { name: 'Choice 1', value: '0' },
       { name: 'Choice 2', value: '1', checked: true }
@@ -69,7 +73,22 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    db.collection('question')
+      .where({
+        department: options.id,
+      }).get({
+        success: res => {
+          this.setData({
+            questionList: res.data,
+            allQuesion: res.data.length - 1,
+            questionNumber: options.questionNumber,
+          })
+          console.log(this.data.allQuesion)
+        }
+      }),
+      this.setData({
+        nextQuestion: parseInt(options.questionNumber) + 1
+      })
   },
 
   /**

@@ -2,21 +2,24 @@
 <view class="page">
   <view class="page_hd">
     <view class="{{isIPX ? 'title-IPX' : 'title'}}">Question 1</view>
-    <view class="question">The Sample Question Title</view>
+    <view class="question">{{questionList[questionNumber].title}}</view>
   </view>
   <view class="page_bd">
-    <view class="weui-cells__title">Multiple Choice</view>
-    <view class="weui-cells weui-cells_after-title">
-      <radio-group bindchange="radioChange">
-        <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
-          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+    <view wx:if="{{questionList[questionNumber].type == 'multi'}}">
 
-          <view class="weui-cell__bd">{{item.name}}</view>
-          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
-            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
-          </view>
-        </label>
-      </radio-group>
+      <view class="weui-cells__title">Multiple Choice</view>
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell weui-check__label" wx:for="{{questionList[questionNumber].suggestions}}" wx:key="value">
+            <radio class="weui-check" value="{{questionList[questionNumber].suggestions.value}}" checked="{{questionList[questionNumber].suggestions.checked}}" />
+
+            <view class="weui-cell__bd">{{questionList[questionNumber].suggestions[index]}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{questionList[questionNumber].suggestions[index].checked}}">
+              <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+            </view>
+          </label>
+        </radio-group>
+      </view>
     </view>
 
     <!-- <view class="weui-cells__title">Multiple Choices</view>
