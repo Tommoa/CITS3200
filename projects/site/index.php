@@ -19,7 +19,7 @@ body
 Username:<br>
 <input type="text" name="user_name"> <br>
 Password:<br>
-<input type="text" name="password"> <br>
+<input type="password" name="password"> <br>
 <input type="submit" value="log in">
 </form>
 
