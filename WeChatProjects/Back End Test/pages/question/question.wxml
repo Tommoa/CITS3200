@@ -5,7 +5,7 @@
 <view class="question_body">
 
   <view wx:if="{{questionList[questionNumber].type == 'shortAns'}}">
-    <input class="weui-input" maxlength="10" placeholder="max to 10 characters" />
+    <input class="weui-input" maxlength="{{questionList[questionNumber].maxlength}}" placeholder="max to 10 characters" bindinput="input_answer"/>
   </view>
 
   <view wx:if="{{questionList[questionNumber].type == 'multi'}}">

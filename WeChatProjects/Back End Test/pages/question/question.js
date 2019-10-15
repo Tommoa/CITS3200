@@ -10,7 +10,7 @@ Page({
   data: {
     questionNumber: 0,
     questionList: [],
-    nextQuestion: 0
+    nextQuestion: 0,
   },
 
   /**
@@ -21,6 +21,7 @@ Page({
     db.collection('question')
       .where({
        department: options.id,
+        group: parseInt(options.group)
       }).get({
         success: res => {
           this.setData({
@@ -66,7 +67,7 @@ Page({
 
   goQuestionList: function () {
     wx.navigateTo({
-      url: '../question_list/question_list?id=' + this.options.id
+      url: '../question_list/question_list?id=' + this.options.id + '&group=' + this.options.group
     })
   },
 
@@ -75,7 +76,7 @@ Page({
     app.globalData.answer[this.data.questionNumber] ='111'
     console.log(app.globalData.answer)
     wx.navigateTo({
-      url: '../question/question?id=' + this.options.id + '&questionNumber=' + this.data.nextQuestion
+      url: '../question/question?id=' + this.options.id + '&questionNumber=' + this.data.nextQuestion + '&group=' + this.options.group
     })
   },
   submitAnswer: function(){
@@ -87,9 +88,7 @@ Page({
         surveyID: this.options.id
       }]
     })
-
     db.collection('answer').add({
-      // data 字段表示需新增的 JSON 数据
       data: {
         ans: app.globalData.answer,
         surveyID: this.options.id,
@@ -98,6 +97,5 @@ Page({
       .then(res => {
         console.log(res)
       })
-
-  }
+  },
 })

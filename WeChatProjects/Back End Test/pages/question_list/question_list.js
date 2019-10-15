@@ -18,7 +18,8 @@ Page({
     // console.log(options.id)
     db.collection('question')
       .where({
-        department: options.id
+        department: options.id,
+        group: parseInt(options.group)
       }).get({
         success: res => {
           this.setData({

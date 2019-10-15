@@ -43,8 +43,12 @@ App({
       }
     })
   },
+  get_a_test: function () {
+    console.log('this is a test')
+  },
   globalData: {
     userInfo: null,
-    answer: null
+    answer: null,
+    group: 0
   }
 })
