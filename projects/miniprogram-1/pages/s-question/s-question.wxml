@@ -1,7 +1,7 @@
 <!--pages/s-question/s-question.wxml-->
 <view class="page">
   <view class="page_hd">
-    <view class="{{isIPX ? 'title-IPX' : 'title'}}">Question 1</view>
+    <view class="{{isIPX ? 'title-IPX' : 'title'}}">Question {{nextQuestion}}</view>
     <view class="question">{{questionList[questionNumber].title}}</view>
   </view>
   <view class="page_bd">
@@ -41,7 +41,16 @@
     </view>
 
     <view wx:if="{{questionList[questionNumber].type == 'shortAns'}}">
-      <input class="weui-input" maxlength="{{questionList[questionNumber].maxlength}}" placeholder="max to 10 characters" bindinput="input_answer" />
+      <!-- <input class="weui-input" maxlength="{{questionList[questionNumber].maxlength}}" placeholder="max to 10 characters" bindinput="input_answer" /> -->
+      <view class="weui-cells__title">Short Answer</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea"  maxlength="{{questionList[questionNumber].maxlength}}" bindinput="input_answer" placeholder="Write Your answer here." style="height: 3.3em" />
+                    <view class="weui-textarea-counter">Maximum 10</view>
+                </view>
+            </view>
+        </view>
     </view>
 
 

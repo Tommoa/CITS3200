@@ -57,13 +57,13 @@ Page({
             group: res.data[0].group
           })
           this.setGroup()
-          if (res.data.length == 0) {
-            wx.navigateTo({
-              url: '../index/index'
-            })
-          }
         }
       })
+    if (res.data.length == 0) {
+      wx.redirectTo({
+        url: '../index/index'
+      })
+    }
     //console.log('id is '+ options.surveyID)
 
   },

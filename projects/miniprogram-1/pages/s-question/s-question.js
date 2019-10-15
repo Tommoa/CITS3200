@@ -92,7 +92,7 @@ Page({
   },
   viewTap2: function () {
     wx.redirectTo({
-      url: '../s-history/s-history?id=' + this.options.id + '&group=' + this.options.group + '&questionNumber=' + this.data.questionNumber
+      url: '../s-history/s-history?id=' + this.options.id + '&group=' + this.options.group + '&questionNumber=-1'
     })
   },
 

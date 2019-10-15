@@ -21,6 +21,20 @@ Page({
   },
 
   onLoad: function(options) {
+    db.collection('survey')
+      .where({
+        surveyID: options.surveyID
+      }).get({
+        success: res => {
+          //console.log(res.data[0].group)
+          this.setData({
+            survey: res.data,
+            surveyID: options.surveyID,
+            group: res.data[0].group
+          })
+          this.setGroup()
+        }
+      })
     db.collection('question')
       .where({
         department: options.id,
@@ -30,7 +44,7 @@ Page({
           this.setData({
             questionList: res.data,
             allQuesion: res.data.length - 1,
-            questionNumber: options.questionNumber
+            questionNumber: options.questionNumber,
           })
           //console.log(res.data)
         }
