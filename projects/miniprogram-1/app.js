@@ -62,6 +62,8 @@ App({
   globalData: {
     userInfo: null,
     isIPX: false,
+    answer: null,
+    group: 0,
     currentSurveyID: null
   }
 })

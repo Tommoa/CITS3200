@@ -21,21 +21,27 @@
       </navigator>
     </view>
     <view class="page__bd page__bd_spacing">
-      <button bindtap="bindViewTapBack" class="weui-btn" type="primary">Continue</button>
+      <view wx:if="{{questionNumber != allQuesion}}">
+        <button bindtap="bindViewTapBack" class="weui-btn" type="primary">Continue</button>
+      </view>
+      <view wx:if="{{questionNumber == allQuesion}}">
+        <button bindtap="nextTap" class="weui-btn" type="primary">Submit</button>
+      </view>
+
     </view>
   </view>
 
-  <view class="{{isIPX ? 'weui-tabbar-IPX' : 'weui-tabbar'}}" >
+  <view class="{{isIPX ? 'weui-tabbar-IPX' : 'weui-tabbar'}}">
     <view class="weui-tabbar__item weui-bar__item_on">
-        <view style="position: relative;display:inline-block;">
-          <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
-        </view>
+      <view style="position: relative;display:inline-block;">
+        <image src="../../images/surveyA.svg" class="weui-tabbar__icon"></image>
+      </view>
     </view>
 
     <view bindtap="bindViewTap" class="weui-tabbar__item">
-        <view style="position: relative;display:inline-block;">
-          <image src="../../images/user.svg" class="weui-tabbar__icon"></image>
-        </view>
+      <view style="position: relative;display:inline-block;">
+        <image src="../../images/user.svg" class="weui-tabbar__icon"></image>
+      </view>
     </view>
   </view>
 

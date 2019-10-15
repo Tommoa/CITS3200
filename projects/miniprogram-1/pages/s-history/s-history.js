@@ -1,48 +1,75 @@
 // pages/s-history/s-history.js
 const app = getApp()
+const db = wx.cloud.database()
 
 Page({
 
- 
+
   data: {
-    isIPX: app.globalData.isIPX
+    isIPX: app.globalData.isIPX,
+    questionList: [],
+    questionNumber: 0,
+    allQuesion:0
   },
 
-  bindViewTapBack: function () {
+  bindViewTapBack: function() {
     wx.navigateBack()
   },
-  
-  onLoad: function (options) {
+
+  bindSubmitTapBack: function() {
+    wx.navigateBack()
+  },
+
+  onLoad: function(options) {
+    db.collection('question')
+      .where({
+        department: options.id,
+        group: parseInt(options.group)
+      }).get({
+        success: res => {
+          this.setData({
+            questionList: res.data,
+            allQuesion: res.data.length - 1,
+            questionNumber: options.questionNumber
+          })
+          //console.log(res.data)
+        }
+      })
 
   },
 
-  
-  onReady: function () {
+  nextTap: function() {
+    wx.redirectTo({
+      url: '../s-final/final',
+    })
+  },
+
+  onReady: function() {
 
   },
 
-  
-  onShow: function () {
+
+  onShow: function() {
 
   },
 
-  
-  onHide: function () {
+
+  onHide: function() {
 
   },
 
-  
-  onUnload: function () {
+
+  onUnload: function() {
 
   },
 
-  
-  onPullDownRefresh: function () {
+
+  onPullDownRefresh: function() {
 
   },
 
-  
-  onReachBottom: function () {
+
+  onReachBottom: function() {
 
   }
 })
