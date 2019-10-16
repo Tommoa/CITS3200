@@ -81,8 +81,8 @@ Page({
 
   goQuestion(event){
     //console.log(event.currentTarget.dataset.num)
-    wx.navigateTo({
-      url: '../question/question?id=' + this.options.id + '&questionNumber=' + event.currentTarget.dataset.num
+    wx.redirectTo({
+      url: '../question/question?id=' + this.options.id + '&questionNumber=' + event.currentTarget.dataset.num +'&group=' + this.options.group
     })
   }
 })
