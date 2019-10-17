@@ -1,5 +1,6 @@
 {
 	"require": {
-		"garbetjie/wechat": "*"
+		"oakhope/oauth2-wechat": "*",
+		"nategood/httpful": "*"
 	}
 }
