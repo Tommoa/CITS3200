@@ -4,18 +4,12 @@ const db = wx.cloud.database()
 // pages/question/question.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     questionNumber: 0,
     questionList: [],
     nextQuestion: 0,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     //console.log(options.id)
     db.collection('question')
