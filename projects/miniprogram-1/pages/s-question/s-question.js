@@ -99,10 +99,12 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
+    //console.log(options.id)
     db.collection('question')
       .where({
         department: options.id,
+        group: parseInt(options.group)
       }).get({
         success: res => {
           this.setData({
@@ -110,7 +112,7 @@ Page({
             allQuesion: res.data.length - 1,
             questionNumber: options.questionNumber,
           })
-          console.log(this.data.allQuesion)
+          //console.log(this.data.allQuesion)
         }
       }),
       this.setData({

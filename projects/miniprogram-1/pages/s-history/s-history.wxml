@@ -18,7 +18,7 @@
         <button bindtap="bindViewTapBack" class="weui-btn" type="primary">Continue</button>
       </view>
       <view wx:if="{{questionNumber == -1}}">
-        <button bindtap="nextTap" class="weui-btn" type="primary">Submit</button>
+        <button bindtap="submitAnswer" class="weui-btn" type="primary">Submit</button>
       </view>
 
     </view>

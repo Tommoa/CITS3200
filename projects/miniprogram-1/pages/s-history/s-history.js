@@ -9,7 +9,7 @@ Page({
     isIPX: app.globalData.isIPX,
     questionList: [],
     questionNumber: 0,
-    allQuesion:0
+    allQuesion: 0
   },
 
   bindViewTapBack: function() {
@@ -85,5 +85,28 @@ Page({
 
   onReachBottom: function() {
 
+  },
+
+  submitAnswer: function() {
+    app.globalData.answer[this.data.questionNumber] = '111'
+    console.log(app.globalData.answer)
+    db.collection('answer').add({
+      data: [{
+        ans: app.globalData.answer,
+        surveyID: this.options.id
+      }]
+    })
+    db.collection('answer').add({
+        data: {
+          ans: app.globalData.answer,
+          surveyID: this.options.id,
+        }
+      })
+      .then(res => {
+        console.log(res)
+      })
+    wx.redirectTo({
+      url: '../s-final/final',
+    })
   }
 })

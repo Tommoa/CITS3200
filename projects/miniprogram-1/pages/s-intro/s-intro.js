@@ -14,7 +14,7 @@ Page({
     group: 0,
     isIPX: app.globalData.isIPX
   },
-  setGroup: function () {
+  setGroup: function() {
     var sum = 0
     var sum1 = 0
     var groupvalue = 0
@@ -41,7 +41,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     console.log(app.globalData.answer)
     app.globalData.answer = []
     console.log(app.globalData.answer)
@@ -54,26 +54,29 @@ Page({
           this.setData({
             survey: res.data,
             surveyID: options.surveyID,
-            group: res.data[0].group
+            group: res.data[0].group,
+
           })
           this.setGroup()
+          if (res.data.length == 0) {
+            wx.navigateTo({
+              url: '../index/index'
+            })
+          }
         }
       })
-    if (res.data.length == 0) {
-      wx.redirectTo({
-        url: '../index/index'
-      })
-    }
+
+
     //console.log('id is '+ options.surveyID)
 
   },
 
-  bindViewTap: function () {
+  bindViewTap: function() {
     wx.navigateTo({
       url: '../my/my'
     })
   },
-  startTap: function () {
+  startTap: function() {
     wx.redirectTo({
       // url: '../s-question/s-question?questionNumber=' + 0,
       url: '../s-question/s-question?id=' + this.data.surveyID + '&questionNumber=' + 0 + '&group=' + this.data.group
@@ -82,49 +85,49 @@ Page({
   /**
    * Lifecycle function--Called when page is initially rendered
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * Lifecycle function--Called when page unload
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * Page event handler function--Called when user drop down
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * Called when page reach bottom
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * Called when user click on the top right corner to share
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
