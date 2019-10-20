@@ -12,16 +12,8 @@ Page({
     questionList: [],
     nextQuestion: 0,
     allQuesion:0,
-    radioItems: [{
-        name: 'Choice 1',
-        value: '0'
-      },
-      {
-        name: 'Choice 2',
-        value: '1',
-        checked: true
-      }
-    ],
+    mcAnswer: [true, false, false, false, false],
+
     checkboxItems: [{
         name: 'Choice 1',
         value: '0',
@@ -37,13 +29,16 @@ Page({
   radioChange: function(e) {
     console.log('radio change，value: ', e.detail.value);
 
-    var radioItems = this.data.radioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-      radioItems[i].checked = radioItems[i].value == e.detail.value;
+    var mcAnswer = this.data.mcAnswer;
+    for (var i = 0, len = mcAnswer.length; i < len; ++i) {
+      mcAnswer[i] = i == e.detail.value;
+      if (mcAnswer[i] == true){
+        app.globalData.answer[this.data.questionNumber] = i;
+      }
     }
 
     this.setData({
-      radioItems: radioItems
+      mcAnswer: mcAnswer
     });
   },
   checkboxChange: function(e) {
