@@ -1,15 +1,6 @@
 <?php
 // maintain a session for some important info
 session_start();
-
-if (session_status() == PHP_SESSION_ACTIVE)
-{
-	echo "<font color = #00FF00>session okay. </font>";
-}
-else
-{
-	echo "<font color = #FF0000> session failed. </font>";
-}
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +14,9 @@ body
 </style>
 <body>
 
+<?php
+printf("%s\n", $_POST["survey"]);
+?>
 <h1>Manage Questionaire.</h1>
 <form id = "form" action = "send.php" method = "post">
 	Questionaire name: <input name = "p_questionaire_name" type = "text"> <br>

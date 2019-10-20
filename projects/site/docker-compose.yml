@@ -1,6 +1,8 @@
 version: '2'
 services:
     web:
+        env_file:
+            - env.env
         image: nginx:latest
         ports:
             - "8080:80"
@@ -16,6 +18,8 @@ services:
         volumes:
             - ./src:/app
     php:
+        env_file:
+            - env.env
         image: php:7-fpm
         volumes:
             - ./src:/app

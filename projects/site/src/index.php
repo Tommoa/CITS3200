@@ -1,7 +1,13 @@
 <!-- entry to site-->
 
 <?php
+require __DIR__ . '/vendor/autoload.php';
+require_once('AccessToken.php');
+use \WeChat\AccessToken;
+
 ini_set('display_errors', -1);
+$token = AccessToken::get_token($_ENV["APPID"], $_ENV["APPSECRET"]);
+printf("%s\n", json_encode($token));
 ?>
 
 <!DOCTYPE html>

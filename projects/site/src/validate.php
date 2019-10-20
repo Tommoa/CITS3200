@@ -1,17 +1,13 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+require_once('AccessToken.php');
+require_once('Database.php');
+use \WeChat\AccessToken;
+use \WeChat\Database;
+
 ini_set('display_errors', -1);
 // maintain a session for some important info
 session_start();
-
-if (session_status() == PHP_SESSION_ACTIVE)
-{
-	echo "<font color = 0x00FF00>session okay. </font>";
-}
-else
-{
-	echo "<font color = 0xFF0000> session failed. </font>";
-}
-
 ?>
  
 <!DOCTYPE html>
@@ -24,31 +20,41 @@ body
 }
 </style>
 <body>
-<h2>
+<h1>
 Welcome
 <?php
-echo $_POST["user_name"];
-$_SESSION["user_name"] = $_POST["user_name"];
-echo " second ".$_SESSION["user_name"];
+$_SESSION["openid"] = "123sdaf3125ewfAR";
 ?>
-.
-</h2>
+</h1>
 <form action = "manage.php" method = "post">
-<input type = "submit" value = "create new Questionaire">
+<input type = "submit" value = "Create new Questionaire">
 </form>
 <div>
+<h2>Manage Surveys</h2>
 <?php
-$i = 1;
-$n = 3;
-while ($i < $n)
-{
-	echo "<h3>Questionaire $i </h3>";
-	echo "<form action = \"manage.php\" method = \"post\">";
-	echo "<input type = \"submit\" value = \"modify\">";
-	echo "<input type = \"submit\" value = \"delete\">";
-	echo "<input type = \"submit\" value = \"fetch\">";
+$qdb = new Database("usr_information", $_ENV["ENVID"]);
+$sdb = new Database("survey", $_ENV["ENVID"]);
+$rdb = new Database("answer", $_ENV["ENVID"]);
+
+$token = AccessToken::get_token($_ENV["APPID"], $_ENV["APPSECRET"]);
+
+$json = json_decode($qdb->query(sprintf('where({ "openid":"%s" })', $_SESSION["openid"]), $token)[0], true);
+$ours = $json['createSurvey'];
+
+if (count($ours) == 0) {
+	echo "<p> You have no surveys. Please create a survey to be able to manage them </p>";
+}
+
+for ($i = 0; $i < count($ours); $i++) {
+	$survey = json_decode($sdb->query(sprintf('where({ "surveyID":"%s" })', $ours[$i]), $token)[0], true);
+	$count = $rdb->count(sprintf('where({ "surveyID": "%s" })', $survey["surveyID"]), $token);
+	echo "<h3>{$survey["Sname"]}</h3>";
+	echo "{$count} responses";
+	echo "<form action = \"actions.php\" method = \"post\">";
+	echo "<button type = \"submit\" name = \"delete\"> delete </button>";
+	echo "<button type = \"submit\" name = \"fetch\"> fetch </button>";
+	echo "<input type=\"hidden\" name = \"survey\" value=\"{$ours[$i]}\" />";
 	echo "</form>";
-	$i++;
 }
 ?>
 </div>
