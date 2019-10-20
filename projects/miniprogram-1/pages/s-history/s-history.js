@@ -80,7 +80,11 @@ Page({
   onUnload: function() {
 
   },
-
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../my/my'
+    })
+  },
 
   onPullDownRefresh: function() {
 

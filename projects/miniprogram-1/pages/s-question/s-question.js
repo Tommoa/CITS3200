@@ -13,6 +13,9 @@ Page({
     nextQuestion: 0,
     allQuesion:0,
     mcAnswer: [true, false, false, false, false],
+    rankAns:[0,0,0,0,0,0,0,0,0],
+    rankNo:1,
+    date: "2019-10-01",
 
     checkboxItems: [{
         name: 'Choice 1',
@@ -39,6 +42,17 @@ Page({
 
     this.setData({
       mcAnswer: mcAnswer
+    });
+  },
+  radioChangeRank: function (e) {
+    console.log('radio change，value: ', e.detail.value);
+    var rankAns = this.data.rankAns;
+    rankAns[e.detail.value] = this.data.rankNo;
+    this.data.rankNo = this.data.rankNo+1;
+    app.globalData.answer[this.data.questionNumber] = rankAns;
+      
+    this.setData({
+      rankAns: rankAns
     });
   },
   checkboxChange: function(e) {
@@ -71,6 +85,12 @@ Page({
     wx.redirectTo({
       url: '../s-final/final',
     })
+  },
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+    app.globalData.answer[this.data.questionNumber] = e.detail.value;
   },
   goNextQuestion: function() {
     console.log(this.data.questionNumber)
@@ -112,7 +132,13 @@ Page({
       }),
       this.setData({
         nextQuestion: parseInt(options.questionNumber) + 1
+        
       })
+    app.globalData.answer[this.data.questionNumber] = 1;
+      
+  },
+  input_answer: function (e) {
+    app.globalData.answer[this.data.questionNumber] =e.detail.value
   },
 
   /**
