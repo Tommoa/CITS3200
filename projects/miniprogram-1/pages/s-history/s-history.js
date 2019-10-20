@@ -9,6 +9,8 @@ Page({
     isIPX: app.globalData.isIPX,
     questionList: [],
     questionNumber: 0,
+    ID:0,
+    groupNo:0,
     allQuesion: 0
   },
 
@@ -23,14 +25,13 @@ Page({
   onLoad: function(options) {
     db.collection('survey')
       .where({
-        surveyID: options.surveyID
+        surveyID: options.id
       }).get({
         success: res => {
           //console.log(res.data[0].group)
           this.setData({
             survey: res.data,
-            surveyID: options.surveyID,
-            group: res.data[0].group
+            ID: options.id,
           })
           this.setGroup()
         }
@@ -48,6 +49,9 @@ Page({
           })
           //console.log(res.data)
         }
+      })
+      this.setData({
+        groupNo: parseInt(options.group)
       })
 
   },

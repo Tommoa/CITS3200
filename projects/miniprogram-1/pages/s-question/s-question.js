@@ -74,7 +74,7 @@ Page({
   },
   goNextQuestion: function() {
     console.log(this.data.questionNumber)
-    app.globalData.answer[this.data.questionNumber] = '111'
+    // app.globalData.answer[this.data.questionNumber] = '111'
     console.log(app.globalData.answer)
     wx.redirectTo({
       url: '../s-question/s-question?id=' + this.options.id + '&questionNumber=' + this.data.nextQuestion + '&group=' + this.options.group

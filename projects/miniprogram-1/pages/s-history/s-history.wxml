@@ -7,9 +7,9 @@
   <view class="page_bd">
     <view class="weui-cells__title">Questions</view>
     <view class="weui-cells weui-cells_after-title" wx:for="{{questionList}}">
-      <navigator url="'../question/question?id=' + this.options.id + '&questionNumber=' + event.currentTarget.dataset.num" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <navigator url="../s-question/s-question?id={{ID}}&questionNumber={{index}}&group={{groupNo}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">{{questionList[index].title}}</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access">{{questionList[questionNumber].type}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{questionList[index].type}}</view>
       </navigator>
 
     </view>
