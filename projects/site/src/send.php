@@ -13,7 +13,7 @@
 
 	session_start();
 
-	$questionaire_id = (string)1;
+	$questionaire_id = $_POST["p_questionaire_id"];
 
 	$groups = explode(":", $_POST["p_ratio"]);
 
