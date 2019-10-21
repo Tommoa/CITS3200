@@ -38,10 +38,11 @@ class Database {
 	}
 
 	public function count($query, $token) {
+		$query = sprintf('{ "env":"%s", "query":"db.collection(\"%s\").%s.count()" }', $this->env, $this->dbname, addslashes($query));
 		$response = \Httpful\Request::post("https://api.weixin.qq.com/tcb/databasecount?access_token={$token->token()}")
 			->sendsJson()
 			->expectsJson()
-			->body(sprintf('{ "env":"%s", "query":"db.collection(\"%s\").%s.count()" }', $this->env, $this->dbname, addslashes($query)))
+			->body($query)
 			->send();
 		return $response->body->count;
 	}
