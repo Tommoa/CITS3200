@@ -18,6 +18,11 @@ body
 printf("%s\n", $_POST["survey"]);
 ?>
 <h1>Manage Questionaire.</h1>
+<?php
+	if (isset($_GET["duplicate"])) {
+		echo "Another survey already exists with the same ID!";
+	}
+?>
 <p id = "number_check"> </p>
 <form id = "form" action = "send.php" method = "post">
 	Questionaire ID: <input name="p_questionaire_id" type="text" id="id" onkeypress="return is_number(event)" onchange="ch_id()" /> <br />

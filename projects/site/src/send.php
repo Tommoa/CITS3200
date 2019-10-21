@@ -13,7 +13,18 @@
 
 	session_start();
 
+	$token = AccessToken::get_token($_ENV["APPID"], $_ENV["APPSECRET"]);
+	$udb = new Database("usr_information", $_ENV["ENVID"]);
+	$sdb = new Database("survey", $_ENV["ENVID"]);
+	$qdb = new Database("question", $_ENV["ENVID"]);
+	
 	$questionaire_id = $_POST["p_questionaire_id"];
+
+	$query = $sdb->query(sprintf('where({ "surveyID":"%s" })', $questionaire_id), $token);
+	if (count($query) > 0) {
+		header("Location: manage.php?duplicate");
+		exit();
+	}
 
 	$groups = explode(":", $_POST["p_ratio"]);
 
@@ -48,10 +59,6 @@
 		}
 		$questions[] = $question;
 	}
-	$token = AccessToken::get_token($_ENV["APPID"], $_ENV["APPSECRET"]);
-	$udb = new Database("usr_information", $_ENV["ENVID"]);
-	$sdb = new Database("survey", $_ENV["ENVID"]);
-	$qdb = new Database("question", $_ENV["ENVID"]);
 
 	$sdb->add(json_encode($questionaire), $token);
 	$qdb->add(json_encode($questions), $token);
