@@ -1,0 +1,27 @@
+version: '2'
+services:
+    web:
+        env_file:
+            - env.env
+        image: nginx:latest
+        ports:
+            - "8080:80"
+        volumes:
+            - ./src:/app
+            - ./site.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - php
+            - composer
+    composer:
+        image: composer/composer:php7
+        command: install
+        volumes:
+            - ./src:/app
+    php:
+        env_file:
+            - env.env
+        image: php:7-fpm
+        volumes:
+            - ./src:/app
+        depends_on:
+            - composer

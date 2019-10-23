@@ -1,15 +1,6 @@
 <?php
 // maintain a session for some important info
 session_start();
-
-if (session_status() == PHP_SESSION_ACTIVE)
-{
-	echo "<font color = #00FF00>session okay. </font>";
-}
-else
-{
-	echo "<font color = #FF0000> session failed. </font>";
-}
 ?>
 
 <!DOCTYPE html>
@@ -17,18 +8,33 @@ else
 <style>
 body
 {
-	background-color : #FEFCFF;
+	background-color: lightblue;
 	font-family : verdana;
+	text-align: center;
+	padding: 150px 0;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 5px;
 }
 </style>
 <body>
 
+<?php
+printf("%s\n", $_POST["survey"]);
+?>
 <h1>Manage Questionaire.</h1>
+<?php
+	if (isset($_GET["duplicate"])) {
+		echo "Another survey already exists with the same ID!";
+	}
+?>
+<p id = "number_check"> </p>
 <form id = "form" action = "send.php" method = "post">
-	Questionaire name: <input name = "p_questionaire_name" type = "text"> <br>
-	How many questions: <input name = "p_question_num" type = "number" id = "questions" value = 1 min = 1 max = 100> <br>
-	How many groups: <input name = "p_group_num" type = "number" id = "groups" value = 3 min = 1 max = 100> <br>
-	Group ratio: <input name = "p_ratio" type = "text" id = "ratio" value = "1:1:1"> <br>
+	Questionaire ID: <input name="p_questionaire_id" type="text" id="id" onkeypress="return is_number(event)" onchange="ch_id()" /> <br />
+	Questionaire name: <input name = "p_questionaire_name" type = "text" /> <br />
+	How many questions: <input name = "p_question_num" type = "number" id = "questions" value = 1 min = 1 max = 100 /> <br />
+	How many groups: <input name = "p_group_num" type = "number" id = "groups" value = 3 min = 1 max = 100 /> <br />
+	Group ratio: <input name = "p_ratio" type = "text" id = "ratio" value = "1:1:1" /> <br />
 	<button type = "button" onclick = "change_settings()">change settings</button>
 
 	<div id = "question_list">
@@ -37,7 +43,7 @@ body
 	</div>	
 
 	<br><br>
-	<input type="Submit" value = "Submit Questionaire">
+	<input type="Submit" onsubmit="return validate()" value = "Submit Questionaire">
 	
 </form>
 
@@ -60,6 +66,33 @@ body
 	var answer_types = ["short answer","radio","checkbox","ranking","date"];
 	
 	change_settings();
+
+	function ch_id() {
+		var f = document.getElementById("id").value;
+		var what = document.getElementById("number_check");
+		if (f.length != 8) {
+			what.innerHTML = "ID must be of length 8!";
+			return false;
+		} else {
+			what.innerHTML = "ID correct length";
+			return true;
+		}
+	}
+
+	ch_id();
+
+	function validate() {
+		return ch_id();
+	}
+
+	function is_number(evt) {
+		evt = (evt) ? evt : window.event;
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+			return false;
+		}
+		return true;
+	}
 	
 	function change_settings()
 	{

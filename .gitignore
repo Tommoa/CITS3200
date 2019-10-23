@@ -10,3 +10,6 @@ $RECYCLE.BIN/
 .TemporaryItems
 .Trashes
 
+# site
+projects/site/src/vendor/
+projects/site/src/composer.lock

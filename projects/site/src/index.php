@@ -1,7 +1,13 @@
 <!-- entry to site-->
 
 <?php
+require __DIR__ . '/vendor/autoload.php';
+require_once('AccessToken.php');
+use \WeChat\AccessToken;
+
 ini_set('display_errors', -1);
+$token = AccessToken::get_token($_ENV["APPID"], $_ENV["APPSECRET"]);
+printf("%s\n", json_encode($token));
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +15,13 @@ ini_set('display_errors', -1);
 <style>
 body
 {
-	background-color : #FEFCFF;
+	background-color: lightblue;
 	font-family : verdana;
+	text-align: center;
+	padding: 150px 0;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 5px;
 }
 </style>
 <body>
