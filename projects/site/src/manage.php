@@ -8,8 +8,13 @@ session_start();
 <style>
 body
 {
-	background-color : #FEFCFF;
+	background-color: lightblue;
 	font-family : verdana;
+	text-align: center;
+	padding: 150px 0;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 5px;
 }
 </style>
 <body>
